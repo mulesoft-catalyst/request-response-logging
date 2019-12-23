@@ -1,0 +1,40 @@
+id: request-response-logging
+name: Request/response Logging
+description: Enables logging messages
+category: Logging
+type: custom
+standalone: true
+requiresConnectivity: false
+providedCharacteristics: [Message Logging]
+requiredCharacteristics: []
+configuration:  
+  - propertyName: log-payload
+    name: Log Payload
+    description: Allows logging a message payload
+    type: boolean
+    defaultValue: false    
+    sensitive: false
+  - propertyName: log-analytics
+    name: Log Analytics
+    description: Allows logging analytics data
+    type: boolean
+    defaultValue: false    
+    sensitive: false
+  - propertyName: resource-filter
+    name: Resource filter
+    description: Regex to filter resource requests (Use .* for any resources)
+    type: string
+    defaultValue: .*
+    sensitive: false
+  - propertyName: method-filter
+    name: Method filter
+    description: HTTP method name (GET, POST, PUT, etc. Use .* for any methods) 
+    type: string    
+    sensitive: false
+    defaultValue: .*	
+  - propertyName: level
+    name: Log level
+    description: Logger level (DEBUG, WARN, ERROR, INFO)
+    type: string
+    defaultValue: INFO    
+    sensitive: false  
